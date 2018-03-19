@@ -1,0 +1,28 @@
+[
+    {
+        "_id": "1",
+        "cardType": "Citizen",
+        "ic": "ABCDEFG",
+        "name": "ZHANG MING ",
+        "race": "CHINESE ",
+        "dob": "12-07-1990 ",
+        "cob": "CHINA ",
+        "phoneNumber": "12345678",
+        "email": "test@test.com",
+        "imageUrl": "https://SingaporeIC_CitizenPic1.jpg",
+        "photourl": ""
+    },
+    {
+        "_id": "2",
+        "cardType": "Citizen",
+        "ic": "ABCDEFG",
+        "name": "KAM HAN ",
+        "race": "CHINESE ",
+        "dob": "04-07-1984 ",
+        "cob": "SINGAPORE ",
+        "phoneNumber": "12345678",
+        "email": "abc@abc.com",
+        "imageUrl": "https://NRIC_Han.jpg",
+        "photourl": "https://Photo_Han.jpg"
+    }
+]

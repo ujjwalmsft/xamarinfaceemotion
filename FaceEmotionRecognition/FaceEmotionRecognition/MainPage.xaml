@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FaceEmotionRecognition"
+             x:Class="FaceEmotionRecognition.MainPage"
+             Title = " Verification Kiosk ">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0"
+                Android="0, 0, 0, 0"
+                WinPhone="0, 0, 0, 0" />
+    </ContentPage.Padding>
+
+    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" >
+        <!--    <StackLayout VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     Spacing="5">  -->
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label Text="Visitor Verification Kiosk "
+           Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3"
+                  FontSize="Large" FontAttributes="Bold">
+                <Label.TextColor>
+                   Red
+                </Label.TextColor>
+            </Label>
+
+        <Label Text="Enter your NRIC:"
+            Grid.Row="1" Grid.Column="0" FontAttributes="Bold">
+                <Label.TextColor>
+                  Blue
+                </Label.TextColor>
+        </Label>
+
+
+
+            <Entry x:Name="NRICEntry" Placeholder="Enter NRIC" 
+               Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+
+
+            <Button x:Name="EnterNRIC" Clicked="EnterNRICButton_Clicked"
+        IsEnabled="True"  Text="Enter NRIC" Grid.Row="1" Grid.Column="2"/>
+            
+    <!--    <ActivityIndicator x:Name="Indicator2" IsVisible="False" IsRunning="False" /> -->
+        
+
+        <Button x:Name="TakePictureButton" Clicked="TakePictureButton_Clicked"
+       IsEnabled="False" IsVisible="False" Text="Take from camera"
+              Grid.Row="1" Grid.Column="3"  />
+     
+      <Button x:Name="UploadPictureButton" Clicked="UploadPictureButton_Clicked"
+      IsEnabled="False" IsVisible="False" Text="Pick a photo"
+              Grid.Row="1" Grid.Column="4"/>
+            
+               
+            
+    <ActivityIndicator x:Name="Indicator1" IsVisible="False" IsRunning="False" 
+                       Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"/>
+
+            <StackLayout HorizontalOptions="FillAndExpand" Grid.Column="1" Grid.Row="2">
+                <Image x:Name="Image1"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" Grid.Column="3" Grid.Row="2">
+                <Image x:Name="Image2"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" Grid.Column="5" Grid.Row="2">
+                <Image x:Name="Image3"/>
+            </StackLayout>
+
+            <Label Text="Face match: " Grid.Row="5" Grid.Column="1" />
+            <Label x:Name="facematchresult" Grid.Row="5" Grid.Column="2" />
+
+            <Label Text="Face match confidence % " Grid.Row="5" Grid.Column="4" />
+            <Label x:Name="facematchscore" Grid.Row="5" Grid.Column="5" />
+
+            <Label Text="Gender: " Grid.Row="7" Grid.Column="5"/>
+            <Label x:Name="GenderLabel" Text="{Binding Path=Gender}" Grid.Row="7" Grid.Column="6"/>
+
+            <Label Text="Emotion: " Grid.Row="7" Grid.Column="1"/>
+            <Label x:Name="EmotionLabel" Text="{Binding Path=Emotion}" Grid.Row="7" Grid.Column="2"/>
+
+
+            <Label Text="Smile: " Grid.Row="8" Grid.Column="1" />
+            <Label x:Name="SmileLabel" Text="{Binding Path=Smile}" Grid.Row="8" Grid.Column="2"/>
+
+
+            <Label Text="Glasses: " Grid.Row="9" Grid.Column="1"/>
+            <Label x:Name="GlassesLabel" Text="{Binding Path=Glasses}" Grid.Row="9" Grid.Column="2"/>
+
+
+            <Label Text="Beard: "  Grid.Row="10" Grid.Column="1"/>
+            <Label x:Name="BeardLabel"   Text="{Binding Path=Beard}" Grid.Row="10" Grid.Column="2"/>
+
+
+            <Label Text="Moustache: "  Grid.Row="8" Grid.Column="5"/>
+            <Label x:Name="MoustacheLabel" Text="{Binding Path=Moustache}" Grid.Row="8" Grid.Column="6"/>
+
+
+            <Label Text="Adult content: " Grid.Row="7" Grid.Column="3" />
+            <Label x:Name="AdultContentLabel" Text="{Binding Path=Adult}"  Grid.Row="7" Grid.Column="4"/>
+
+            <Label Text="Racy content: " Grid.Row="8" Grid.Column="3" />
+            <Label x:Name="RacyContentLabel" Text="{Binding Path=ImgRacy}" Grid.Row="8" Grid.Column="4"/>
+
+
+            <Label Text="Description: " Grid.Row="9" Grid.Column="3"/>
+            <Label x:Name="DescriptionLabel" Text="{Binding Path=ImgDescription}" Grid.Row="9" Grid.Column="4"/>
+
+            <Label Text="Accent color: " Grid.Row="10" Grid.Column="3"/>
+            <Label x:Name="ColorLabel" Text="{Binding Path=VisColor}" Grid.Row="10" Grid.Column="4"/>
+
+            <Label Text="Image Clip Art: " Grid.Column="5" Grid.Row="9"/>
+            <Label x:Name="ImgTypeClpArt"  Text="{Binding Path=ImgTypeClipArt}" Grid.Column="6" Grid.Row="9"/>
+
+            <Label Text="Image Line Drawing: " Grid.Column="5" Grid.Row="10"/>
+            <Label x:Name="ImgTypeLineDraw"  Text="{Binding Path=ImgTypeLineDrawing}" Grid.Column="6" Grid.Row="10"/>
+            <!-- Vision API UI controls end -->
+    </Grid>
+
+    </StackLayout> 
+            
+            
+      
+
+</ContentPage>
